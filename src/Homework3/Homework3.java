@@ -37,7 +37,7 @@ public class Homework3 {
        System.out.println("Does Sentence _3 end with 'K'? " + sentence_3.toUpperCase(Locale.ROOT).endsWith("K"));
        String result_3 = "A car has four wheels";
        result_3 = result_3.toLowerCase(Locale.ROOT).startsWith("a") ? "Media":"Entertainment";
-       System.out.println("Is it Media or Entertainment? " + result_3);
+       System.out.println("Is it Media or Entertainment? " + result_3);//This is my code
        /**
          * 1. Display/Print length of your sentence_3
          * 2. does sentence_3 starts with "a" (ignore cases)
