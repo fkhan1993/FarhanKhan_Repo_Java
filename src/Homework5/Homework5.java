@@ -48,15 +48,14 @@ public class Homework5 {
          */
         int num2 = 16;
 
-        if (num2%3 == 0) {
+        if (num2%3 == 0 && num2%5 == 0) {
+            System.out.println("divisible by both");
+        } else if (num2%3 == 0) {
             System.out.println("divisible by 3");
         } else if (num2%5 == 0) {
             System.out.println("divisible by 5");
-        } else if (num2%3 == 0 && num2%5 == 0) {
-            System.out.println("divisible by both");
-        } else if (num2%3 != 0 || num2%5 != 0); {
+        } else {
             System.out.println(num2);
         }
-
-    }
+            }
 }
