@@ -16,7 +16,19 @@ public class Homework6 {
          *
          * For hint refer: Loops_Concept , Line#34
          */
+        String sentence = "happy new year TO You DeaR";
+        String sevenWordSentence_1 = sentence.toLowerCase();
+        String [] arr1 = sevenWordSentence_1.split(" ");
+        String firstWord = arr1[0].substring(0, 1).toUpperCase() + arr1[0].substring(1);
+        String secondWord = arr1[1].substring(0, 1).toUpperCase() + arr1[1].substring(1);
+        String thirdWord = arr1[2].substring(0, 1).toUpperCase() + arr1[2].substring(1);
+        String fourthWord = arr1[3].substring(0, 1).toUpperCase() + arr1[3].substring(1);
+        String fifthWord = arr1[4].substring(0, 1).toUpperCase() + arr1[4].substring(1);
+        String sixthword = arr1[5].substring(0, 1).toUpperCase() + arr1[5].substring(1);
+        sevenWordSentence_1 = firstWord + " "+secondWord+" "+ thirdWord+" "+ fourthWord+" "+ fifthWord+" "+ sixthword;
+        String result = "";
 
+        System.out.println("After code : " + sevenWordSentence_1);
 
         /**
          * create the abbreviation  // HNY
