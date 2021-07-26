@@ -134,7 +134,7 @@ public class Homework6 {
                 System.out.println(nameToSearch.toUpperCase() + " WAS FOUND IN POSITION " + (i + 1));
                 is_it_there = true;
             } else if (i == names.length - 1 && !is_it_there) {
-                System.out.println(nameToSearch.toUpperCase() + " WAS NOT FOUND IN THE LIST"); //Uppercase looks better
+                System.out.println(nameToSearch.toUpperCase() + " WAS NOT FOUND IN THE LIST");
             }
         }
         /**
