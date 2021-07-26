@@ -19,7 +19,7 @@ public class Homework5 {
         int studentScore = 80;
         int maxScore = 150;
         String Grade = "";
-        double percentage = (studentScore*100.00)/maxScore;
+        double percentage = (studentScore*100.0)/maxScore;
         if (percentage >= 91 && percentage <= 100) {
             Grade = "A";
         } else if (percentage >= 81 && percentage <= 90.99) {
