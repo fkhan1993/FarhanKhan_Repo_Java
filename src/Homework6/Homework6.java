@@ -145,7 +145,7 @@ public class Homework6 {
          */
         String[] mynames = {"john", "happy", "peACe", "jOy", "LEarN", "Orange", "king kong", "iRON MAN"};
         for (int i = 0; i < mynames.length; i++) {
-            if ((mynames[i].toLowerCase().contains("o")) && (mynames[i].length() >= mynames[1].length())) {
+            if ((mynames[i].toLowerCase().contains("o")) && (mynames[i].length() >= 5 )) {
                 System.out.println(mynames[i]);
             }
         }
