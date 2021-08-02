@@ -38,20 +38,21 @@ public class Homework8 {
             arr1[5] = arr1[5].substring(0, 1).toUpperCase() + arr1[5].substring(1);
             threeWordSentence_1 = arr1[0] + " " + arr1[1] + " " + arr1[2];
             System.out.println("After code : " + threeWordSentence_1);
-            //return threeWordSentence_1;
+            return threeWordSentence_1;
         }
 
 
         /**
          * Write a method to reverse a String
          */
-        public static String reverseString (String task3String){
+        public static void String reverseString (String task3String){
             //String task3String = "happy holidays"; //Storing the backwards strings
             String reverse = "";
             for (int m = task3String.length() - 1; m >= 0; m--) {
                 reverse = reverse + task3String.charAt(m);
             }
             System.out.println(reverse);
+           return reverse;
         }
 
         /**
@@ -59,7 +60,7 @@ public class Homework8 {
          *
          * return type: boolean
          */
-        public static String taskword (String task1Word){
+        public static void String taskword (String task1Word){
             for (int i = 0; i < task1Word.length(); i += 1) {
                 boolean isPalindrome = true;
                 int forwards = 0;
@@ -86,7 +87,7 @@ public class Homework8 {
              * ans : 7.2
              *
              */
-            public static int average (int[] array){
+            public static void int average (int[] array){
                 int sum = 0;
 
                 for (int i = 0; i < array.length; i++) {
@@ -98,9 +99,7 @@ public class Homework8 {
                 System.out.println("the average of 10 is:" + average);
 
                 System.out.println("sum of 10 is:" + sum);
-
-
-                return 0;
+                //return 0;
 
             }
 
@@ -110,7 +109,7 @@ public class Homework8 {
              * Input array: {33, 54, 67, 19, 9, 52}
              * max : 67
              */
-            public static int getMax ( int[] inputArray){
+            public static int getMax (int[] inputArray) {
                 int maxValue = inputArray[0];
                 for (int i = 1; i < inputArray.length; i++) {
                     if (inputArray[i] > maxValue) {
