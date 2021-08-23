@@ -18,29 +18,29 @@ public class Accounts {
         accountType = "NO ACCOUNT OPENED";
     }
 
-    public Accounts(String accountType, int scoreOrInDeposit){
+    public Accounts(String accountType, int Depositamount){
         this.accountType = accountType;
-        accountId = BankProject.nCrypted++;
-        if (accountType.equals("CREDIT CARD")){
-            if (scoreOrInDeposit >= 750 || scoreOrInDeposit <= 850){
+        accountId = Bank.encrypted++;
+        if (accountType.equals("CHECKINGS")){
+            if (Depositamount >= 750 || Depositamount <= 850){
                 creditLine = 5000.0;
             }
-            else if (scoreOrInDeposit >= 649){
+            else if (Depositamount >= 649){
                 creditLine = 2500.0;
             }
-            else if (scoreOrInDeposit >= 549){
+            else if (Depositamount >= 549){
                 creditLine = 1000.0;
             }
-            else if (scoreOrInDeposit >= 300 || scoreOrInDeposit <= 500){
+            else if (Depositamount >= 300 || Depositamount <= 500){
                 creditLine = 300.0;
             }
             else{
-                System.out.println("YOUR CREDIT SCORE IS INVALID OR YOU DO NOT QUALIFY FOR A CREDIT CARD WITH US. EXITING PROCESS.");
+                System.out.println("You are not qualified to open an account with us.");
             }
             balance = 0.0;
         }
         else {
-            balance = scoreOrInDeposit;
+            balance = Depositamount;
         }
         this.showBalance();
     }
@@ -50,47 +50,25 @@ public class Accounts {
         System.out.println("WHAT TYPE OF ACCOUNT WOULD YOU LIKE TO OPEN? /n"
                 + "1. CHECKINGS /n"
                 + "2. SAVINGS /n"
-                + "3. CREDIT CARD /n"
-                + "PRESS 1,2 OR 3 THEN PRESS ENTER: ");
+                + "PRESS 1 OR 2, THEN PRESS ENTER: ");
         int choice = input.nextInt();
         input.nextLine();
         switch (choice){
             case 1:
                 accountType = "CHECKINGS";
-                accountId = BankProject.nCrypted++;
-                System.out.println("ENTER INITIAL DEPOSIT AMOUNT: ");
+                accountId = Bank.encrypted++;
+                System.out.println("ENTER DEPOSIT AMOUNT: ");
                 balance = input.nextDouble();
                 break;
 
             case 2:
                 accountType = "SAVINGS";
-                accountId = BankProject.nCrypted++;
-                System.out.println("ENTER INITIAL DEPOSIT AMOUNT: ");
+                accountId = Bank.encrypted++;
+                System.out.println("ENTER DEPOSIT AMOUNT: ");
                 balance = input.nextDouble();
                 break;
 
-            case 3:
-                accountType = "CREDIT CARD";
-                accountId = BankProject.nCrypted++;
-                balance = 0.0;
-                System.out.println("PLEASE ENTER YOUR CREDIT SCORE: ");
-                int cScore = input.nextInt();
-                if (cScore >= 750 || cScore <= 850){
-                    creditLine = 5000.0;
-                }
-                else if (cScore >= 649){
-                    creditLine = 2500.0;
-                }
-                else if (cScore >= 549){
-                    creditLine = 1000.0;
-                }
-                else if (cScore >= 300 || cScore <= 500){
-                    creditLine = 300.0;
-                }
-                else{
-                    System.out.println("YOUR CREDIT SCORE IS INVALID OR YOU DO NOT QUALIFY FOR A CREDIT CARD WITH US. EXITING PROCESS.");
-                }
-                break;
+
 
             default:
                 System.out.println("INVALID RESPONSE, EXITING PROCESS.");
@@ -107,14 +85,14 @@ public class Accounts {
      *      amount
      */
     protected void makeDeposit(double amt){
-        if (accountType.equals("CREDIT CARD")){
+        if (accountType.equals("CHECKINGS")){
             balance -= amt;
         }
         else {
             balance += amt;
         }
         this.showBalance();
-        System.out.println("THANK YOU.");
+        System.out.println("THANK YOU FOR YOUR TRANSACTION.");
     }
 
     /**
@@ -123,9 +101,9 @@ public class Accounts {
      *      amount
      */
     protected void makeWithdrawal(double amt){
-        if (accountType.equals("CREDIT CARD")){
+        if (accountType.equals("CHECKINGS")){
             if (balance + amt >= creditLine){
-                System.out.println("THIS CHARGE CANNOT BE COMPLETED BECAUSE YOUR BALANCE WILL BE OVER THE LIMIT.");
+                System.out.println("THIS CHARGE CANNOT BE COMPLETED BECAUSE YOUR BALANCE WILL EXCEED THE LIMIT.");
             }
             else {
                 balance += amt;
@@ -135,7 +113,7 @@ public class Accounts {
             balance -= amt;
         }
         this.showBalance();
-        System.out.println("THANK YOU.");
+        System.out.println("THANK YOU FOR YOUR TRANSACTION.");
     }
     /**
      * 4. showBalance
@@ -148,7 +126,7 @@ public class Accounts {
         }
         else {
             System.out.println("ACCOUNT NUMBER: "+accountId);
-            if (accountType.equals("CREDIT CARD")){
+            if (accountType.equals("CHECKINGS")){
                 System.out.println("CREDIT LINE: $"+creditLine);
             }
             System.out.println("BALANCE: $"+balance);
